@@ -1,0 +1,28 @@
+{
+    "channel":{
+       "id":9,
+       "name":"my_house",
+       "description":"Netduino Plus connected to sensors around the house",
+       "latitude":"40.44",
+       "longitude":"-79.9965",
+       "field1":"Pulse Rate in BPM",
+       "field2":"Temperatuer in F",
+       "created_at":"2010-12-14T01:20:06Z",
+       "updated_at":"2018-01-26T13:08:04Z",
+       "last_entry_id":13633195
+    },
+    "feeds":[
+       {
+          "created_at":"2018-01-26T13:07:48Z",
+          "entry_id":13633194,
+          "field1":"70",
+          "field2":"99"
+       },
+       {
+          "created_at":"2018-01-26T13:08:04Z",
+          "entry_id":13633195,
+          "field1":"82",
+          "field2":"100"
+       }
+    ]
+ }

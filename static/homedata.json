@@ -1,0 +1,6 @@
+{
+    "code": 200,
+    "status": "Ok",
+    "message": "Server is Running on server",
+    "note": "API Route at /api/v1"
+}
