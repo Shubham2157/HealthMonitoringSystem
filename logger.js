@@ -1,11 +1,12 @@
 const { createLogger, transports, format } = require('winston');
 require('winston-daily-rotate-file');
-//const ip = `127.0.0.1`;
 
 var os = require("os");
-var networkInterfaces = os.networkInterfaces();
-var wifiIp = networkInterfaces['Wi-Fi'][networkInterfaces['Wi-Fi'].length-1].address
-var ip = networkInterfaces['Loopback Pseudo-Interface 1'][networkInterfaces['Loopback Pseudo-Interface 1'].length-1].address
+var hostname = os.hostname();
+//var networkInterfaces = os.networkInterfaces();
+
+//var wifiIp = networkInterfaces['Wi-Fi'][networkInterfaces['Wi-Fi'].length-1].address
+//var ip = networkInterfaces['Loopback Pseudo-Interface 1'][networkInterfaces['Loopback Pseudo-Interface 1'].length-1].address
 
 // https://www.npmjs.com/package/winston-daily-rotate-file
 var transportDRT = new transports.DailyRotateFile({
@@ -26,7 +27,7 @@ const customFormat = format.combine(format.timestamp({
 }),
     format.align(),
     format.printf((info) => {
-        return `[${ip}] || [${wifiIp}] - ${info.timestamp} ****** [${info.level.toUpperCase().padEnd(7)}] - ${info.message}`
+        return `[${hostname}] - ${info.timestamp} ****** [${info.level.toUpperCase().padEnd(7)}] - ${info.message}`
     }))
 
 const logger = createLogger({
