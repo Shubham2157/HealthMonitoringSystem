@@ -2,6 +2,9 @@ const { createLogger, transports, format } = require('winston');
 require('winston-daily-rotate-file');
 const ip = `127.0.0.1`;
 
+var os = require("os");
+var hostname = os.hostname();
+
 // https://www.npmjs.com/package/winston-daily-rotate-file
 var transportDRT = new transports.DailyRotateFile({
   dirname: './logs-file',
@@ -21,7 +24,7 @@ const customFormat = format.combine(format.timestamp({
 }),
     format.align(),
     format.printf((info) => {
-        return `[${ip}] - ${info.timestamp} ****** [${info.level.toUpperCase().padEnd(7)}] - ${info.message}`
+        return `[${hostname}] - ${info.timestamp} ****** [${info.level.toUpperCase().padEnd(7)}] - ${info.message}`
     }))
 
 const logger = createLogger({
