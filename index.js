@@ -6,6 +6,10 @@ const app = express()
 const PORT = process.env.PORT || 5000;
 
 
+app.use("/logs-file", express.static("logs-file"))
+app.use("/logsfile", express.static("logs"))
+
+
 // Home Route
 app.get('/', (req, res) => {
     console.log();
