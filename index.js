@@ -19,6 +19,13 @@ app.get('/', (req, res) => {
 
 // Authentiction Routes
 
+app.get('/login', (req, res) => {
+    res.json({
+        status: '200',
+        message: 'ok'
+    })
+})
+
 
 // API Routes
 
